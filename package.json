@@ -1,0 +1,29 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "chakra information",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meamya/7moods.git"
+  },
+  "author": "Meamya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meamya/7moods/issues"
+  },
+  "homepage": "https://github.com/meamya/7moods#readme",
+    "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-jwt": "^5.1.0",
+    "jsonwebtoken": "^7.1.9",
+    "mongoose": "^4.6.8",
+    "nodemon": "^1.11.0",
+    "morgan": "^1.7.0"
+  }
+}
