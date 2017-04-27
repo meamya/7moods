@@ -1,6 +1,5 @@
 font-family: 'Scope One', serif;
 
-
 .login-dp{
     min-width: 250px;
     padding: 14px 14px 0;
@@ -31,7 +30,7 @@ font-family: 'Scope One', serif;
 }
 .btn-fb:hover{
     color: #fff;
-    background-color:#496ebc 
+    background-color:#ffff; 
 }
 .btn-tw{
     color: #fff;
@@ -39,7 +38,7 @@ font-family: 'Scope One', serif;
 }
 .btn-tw:hover{
     color: #fff;
-    background-color:#59b5fa;
+    background-color:#fff;
 }
 @media(max-width:768px){
     #login-dp{
@@ -55,13 +54,18 @@ font-family: 'Scope One', serif;
 .divider-vertical{
     padding: 25px;
 }
-.navbar{
+.navbar-inverse{
     color: white;
-    background-color: #310257;
+    background-color:  #36454f;
+    align-content: right;
 }
+.navbar-inverse
+.hover{
+    background-color: whitesmoke;
+}
+
 .btn{
-    color: white;
-    background-color: #332C58;
+    background-color: #36454f;
 }
 
 .greyback{
@@ -78,7 +82,7 @@ font-family: 'Scope One', serif;
 .front {
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 25%;
+    padding-top: 15%;
     text-align: center;
     font-size: 28px; 
     background-color: #18142D;
@@ -91,7 +95,7 @@ font-family: 'Scope One', serif;
 .crownback{
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 25%;
+    padding-top: 15%;
     text-align: center;
     background-color: #310257;
     height: 100%;
@@ -102,7 +106,7 @@ font-family: 'Scope One', serif;
 .front {
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 25%;
+    padding-top: 15%;
     text-align: center;
     font-size: 28px; 
     background-image:url("http://images.unsplash.com/photo-1488718729626-53eaa41c0848?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=f15b79c41d763f3a3516cc74af03e722");
@@ -115,7 +119,7 @@ font-family: 'Scope One', serif;
 .throatback{
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 25%;
+    padding-top: 15%;
     background-color: blue;
     height: 100%;
     width: 100%;
@@ -125,7 +129,7 @@ font-family: 'Scope One', serif;
 .front{
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 25%;
+    padding-top: 15%;
     text-align: center;
     font-size: 28px; 
     background-image:url("http://images.unsplash.com/photo-1489669451184-1300032d41ee?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=ebdd42c9c5be02b1fb10624023b5d679");
@@ -139,7 +143,7 @@ font-family: 'Scope One', serif;
 .front{
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 25%;
+    padding-top: 15%;
     text-align: center;
     font-size: 28px; 
     background-image:url("https://images.unsplash.com/photo-1473229903343-d7903343f6c0?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=20b0df67badc12b3d487a495e2392d39");
@@ -150,7 +154,7 @@ font-family: 'Scope One', serif;
 .thirdeyeback{
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 25%;
+    padding-top: 15%;
     background-color:#850B6D;
     height: 100%;
     width: 100%;
@@ -158,7 +162,7 @@ font-family: 'Scope One', serif;
 .heartback{
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 25%;
+    padding-top: 15%;
     background-color: #2CC503;
     height: 100%;
     width: 100%;
@@ -167,7 +171,7 @@ font-family: 'Scope One', serif;
 .front {
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 25%;
+    padding-top: 15%;
     text-align: center;
     font-size: 28px; 
     background-color: #DF3E0B;
@@ -191,7 +195,7 @@ font-family: 'Scope One', serif;
 .front {
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 25%;
+    padding-top: 15%;
     text-align: center;
     font-size: 28px; 
     background-image:url("https://images.unsplash.com/photo-1482623167695-c6268f3eb9b3?dpr=1&auto=format&fit=crop&w=767&h=1151&q=80&cs=tinysrgb&crop=&bg=");
@@ -203,7 +207,7 @@ font-family: 'Scope One', serif;
 .solarback{
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 25%;
+    padding-top: 15%;
     background-color: #C89903;
     height: 100%;
     width: 100%;
@@ -213,7 +217,7 @@ font-family: 'Scope One', serif;
 .front {
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 25%;
+    padding-top: 15%;
     text-align: center;
     font-size: 28px; 
     background-image:url("http://images.unsplash.com/photo-1414521203994-7efc0bc37d65?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=ecd2e15eea8d97898588c7e806cf8035");
@@ -224,7 +228,7 @@ font-family: 'Scope One', serif;
 .sacralback{
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 25%;
+    padding-top: 15%;
     background-color: #DF3E0B;
     height: 100%;
     width: 100%;
@@ -337,7 +341,7 @@ body {
   font-size: 85%;
 }
 .btn btn-secondary btn-lg{
-    background-color: black;
+    background-color: white;
 }
 
 footer {

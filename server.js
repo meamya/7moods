@@ -6,12 +6,18 @@ var mongoose = require("mongoose");
 var path = require("path");
 var config = require("./config");
 var logger = require("morgan");
+//angular.module('7moods', ['ngRoute']);
+
+
+//Chakra =require('./models/chakraModel');
+//User = require('./models/userModel');
+
 //var expressJwt = require("express-jwt")
 var port = process.env.PORT || 8000;
 
 //section 2 
 app.use(bodyParser.json());
-//app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname, "/public")))
 app.use(logger("dev"));
 
 //connect to database 
@@ -20,6 +26,26 @@ mongoose.connect(config.database, function (err) {
 	if (err) throw err;
 	console.log("Successully connected to the database")
 });
+
+app.get('/', function(req,res){
+res.sendFile(path.join(__dirname + '/index.html'));    
+    
+})
+app.get('*', function(req,res){
+res.sendFile(path.join(__dirname + '/index.html'));    
+    
+})
+
+
+app.get('/api/chakras', function(req,res){
+    Chakra.getChakra(function(err,chakras){
+        if(err){
+            throw err;
+        }
+        res.json(chakras);
+        });
+    });
+
 
 //app uses these apis and connects to these routes
 //app.use("/api", expressJwt({
