@@ -1,4 +1,5 @@
 //section 1 npm download packages
+var fs = require('fs');
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
@@ -17,7 +18,7 @@ var port = process.env.PORT || 8000;
 
 //section 2 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "/public")))
+app.use(express.static(path.join(__dirname, "/")))
 app.use(logger("dev"));
 
 //connect to database 
@@ -28,23 +29,34 @@ mongoose.connect(config.database, function (err) {
 });
 
 app.get('/', function(req,res){
-res.sendFile(path.join(__dirname + '/index.html'));    
+res.sendFile(path.join(__dirname + '/public/index.html'));    
     
 })
-app.get('*', function(req,res){
-res.sendFile(path.join(__dirname + '/index.html'));    
-    
-})
-
 
 app.get('/api/chakras', function(req,res){
-    Chakra.getChakra(function(err,chakras){
-        if(err){
-            throw err;
-        }
-        res.json(chakras);
+var file = path.join(__dirname + '/public/components/chakra.json'); 
+                 
+
+    fs.readFile(file, 'utf8',function (err,data) { 
+        if (err) { 
+            return console.log(err); 
+        } 
+        res.send(data); 
+//    Chakra.getChakra(function(err,chakras){
+//        if(err){
+//            throw err;
+//        }
+//        res.json(chakras);
         });
     });
+
+app.get('*', function(req,res){
+res.sendFile(path.join(__dirname + '/public/index.html'));    
+    
+})
+
+var file = (path.join(__dirname + '/public/components/chakra.json'));
+
 
 
 //app uses these apis and connects to these routes

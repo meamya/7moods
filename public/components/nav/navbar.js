@@ -1,7 +1,7 @@
 var app = angular.module("7moods", [])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
 
-    $routeProvider.when('/home',
+    $routeProvider.when('/',
     {
       templateUrl:    'home.html',
       controller:     'HomeCtrl'
@@ -18,7 +18,7 @@ var app = angular.module("7moods", [])
     });
     $routeProvider.otherwise(
     {
-      redirectTo:     '/home',
+      redirectTo:     '/',
       controller:     'HomeCtrl', 
     }
   );
