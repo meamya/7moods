@@ -77,7 +77,7 @@
  
    <div class="row">
     <div class="card">
-      <div class="card-block" class="background"><h3 class="card-title">Root Chakra Care Box</h3>
+      <div class="card-block" class="background"><h3 ng-repeat="chakra in data | startFrom:currentPage*pageSize | limitTo:pageSize"> <strong> {{chakra.product}}</strong></h3> 
          <p>Each box contains a unique set of curated items such as: essential oils, incense, specialty teas/coffee, stationary, spices, soaps, hand-made items, accessories, and recipes. </p>    
           <a href="#" class="btn btn-primary"> SIGN-UP FOR EARLY ACCESS </a>
 <img ng-src="http://res.cloudinary.com/dlree1c9i/image/upload/v1493483111/7moodsbox.png" width="350px" height="auto"/>
@@ -97,5 +97,3 @@
 	
 	
     </div>
-
-    

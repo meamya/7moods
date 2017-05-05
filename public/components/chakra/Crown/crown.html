@@ -1,15 +1,102 @@
+<!--
+<form class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                
+-->
+      
+       <script src="./public/components/Crown/crownCtrlr.js"></script>
+                 
+<div class="container" ng-controller="crownCtrlr">
+
+
+	<br/>
+	<div class="container">
+	
+	<a href="/">Back to affirmation cards</a>
+
+
+<div class="row">
+  <div class="col-sm-12" align="center">
+      <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+          Previous Chakra
+              </button>{{currentPage+1 }} of {{ numberOfPages()}}
+               <button ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">Next Chakra</button>
+       
+<div class="row" align="left">
+      
+     
+      <div class="col-sm-8"> 
+      <div class="background">    
+      
+    
+		<h4 ng-repeat="chakra in data | startFrom:currentPage*pageSize | limitTo:pageSize"> <strong> {{chakra.name}}</strong> 
+		<br><br>
+		<strong>Location: </strong> {{chakra.location}} <br>
+		<strong>Description:</strong>
+		{{chakra.description}}<br>
+        
+            <strong> Mantra:</strong> {{chakra.mantra}}
+		<br>
+		
+		<strong>Color: </strong>{{chakra.color}}
+		<br>
+		<strong>Meaning:</strong> {{chakra.meaning}}
+		<br>
+		<strong>Associated Element:</strong> {{chakra.element}}
+		<br>
+		<strong>Essential Oils:</strong>    {{chakra.essentialoils}}
+		<br>
+		<strong>Common Challenges:</strong>  {{chakra.challenges}}
+		<br>
+		<strong>Foods:</strong> {{chakra.foods}}
+		<br>
+		<stong>Balanced:</stong> {{chakra.balanced}}
+		<br>
+		<strong>Unbalanced:</strong>  {{ chakra.unbalanced}}
+		<br>
+		<strong>Gems/Stones: </strong>
+		 {{chakra.gemsstones}}<br>
+		<strong>Function:</strong> {{chakra.function}}
+		<br>
+		<strong>Associated Organs:</strong> {{chakra.organs}}
+		<br>
+		<strong></strong>
+
+		</h4>
+	
+     
+     </div>
+    </div>
+           
+           <div class="container" display="inline-block">
+<!--            <div class="col-sm-4">      -->
+ 
+   <div class="row">
+    <div class="card">
+      <div class="card-block" class="background"><h3 class="card-title">Root Chakra Care Box</h3>
+         <p>Each box contains a unique set of curated items such as: essential oils, incense, specialty teas/coffee, stationary, spices, soaps, hand-made items, accessories, and recipes. </p>    
+          <a href="#" class="btn btn-primary"> SIGN-UP FOR EARLY ACCESS </a>
+<img ng-src="http://res.cloudinary.com/dlree1c9i/image/upload/v1493483111/7moodsbox.png" width="350px" height="auto"/>
+        
+        </div>
+    </div>
+      </div>
+        </div>
+        </div> 
+<!--</div>-->
+  </div>
+    </div>
+<!--    </div>-->
+    
+	
+	
+	
+	
+    </div>
 
 
 
-
-<html ng-app>
- <!-- Body tag augmented with ngController directive  -->
- <body ng-controller="crownController">
-   <input ng-model="foo" value="">
-   <!-- Button tag with ngClick directive, and
-          string expression 'buttonText'
-          wrapped in "{{ about crown }}" markup -->
-   <button ng-click="changeFoo()">{{submit}}</button>
-   <script src="angular.js">
- </body>
-</html>

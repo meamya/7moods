@@ -1,16 +1,16 @@
-var app = angular.module('MyApp');
-
-(function(app){
-  "use strict";
-    
-app.controller('rootCtrlr', function($scope, $http) {
-    $http.get("/api/chakras").then(function(response) {
-    console.log(response);
-    });
-});
-
-})(app);
-
+////var app = angular.module('MyApp');
+//
+//(function(app){
+//  "use strict";
+//    
+//app.controller('rootCtrlr', function($scope, $http) {
+//    $http.get("/api/chakras").then(function(response) {
+//    console.log(response);
+//    });
+//});
+//
+//})(app);
+//
 
 
 

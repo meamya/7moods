@@ -1,4 +1,58 @@
-font-family: 'Scope One', serif;
+.line{
+    background-color: peachpuff;
+    box-sizing: content-box;
+    color: white;
+    font-family: 'Poiret One';
+    padding: .2px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.background {
+    background-color: #18142D;
+    box-sizing: content-box;
+    color: white;
+    font-family: 'Poiret One';
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.boxbackground {
+    display: inline-block;
+    padding: 2px;    
+    background-color: transparent;
+    box-sizing: content-box;
+    margin-bottom: 10px;  
+}
+
+.box{
+    box-sizing: content-box;
+    font-family: 'sans serif';
+    color: grey;
+    display: inline-block;
+    float: left;
+    padding-bottom: 0px;
+}
+
+.contact{
+   background-image:url("https://images.unsplash.com/photo-1473229903343-d7903343f6c0?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=20b0df67badc12b3d487a495e2392d39");
+    background-size: cover;
+    background-color: white;
+    background-position: inherit;
+    border: solid, 5px,;
+    color: white;
+    padding-top: 100px;
+    font-family: 'Scope One';
+    font-size: 20px;
+}
+
+.jumbotron{
+    background-size: cover;
+    color: grey;
+    font-family: 'sans-serif';   
+}
+
 
 .login-dp{
     min-width: 250px;
@@ -52,20 +106,26 @@ font-family: 'Scope One', serif;
 }
 
 .divider-vertical{
-    padding: 25px;
+    padding: 15px;
 }
+
 .navbar-inverse{
-    color: white;
-    background-color:  #36454f;
+    color: #18142D;
+    background-color:  #18142D;
     align-content: right;
 }
-.navbar-inverse
+
+.navbar
 .hover{
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 .btn{
-    background-color: #36454f;
+    background-color: transparent;
+    border: solid, 3px;
+    border-color: peachpuff;
+    color: grey;
+    padding: 10px;
 }
 
 .greyback{
@@ -85,7 +145,31 @@ font-family: 'Scope One', serif;
     padding-top: 15%;
     text-align: center;
     font-size: 28px; 
+    background-image:url("https://images.unsplash.com/photo-1467766864651-0f10ea01c1bc?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=7f15dfb58b9b62be4c49bb8a52516886");
+    background-size: cover;
+    background-position: right;
+    max-width: cover;
+    height: cover;      
+}
+
+.greyback1{
+    font-family: 'Scope One', serif;
+    color: white;
+    padding-top: 25%;
+    text-align: center;
     background-color: #18142D;
+    height: 100%;
+    width: 100%;
+}
+
+.greybg1
+.front {
+    font-family: 'Scope One', serif;
+    color: white;
+    padding-top: 15%;
+    text-align: center;
+    font-size: 28px; 
+    background-image:url("https://images.unsplash.com/photo-1469286714608-0defd688c4e3?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=a5f7a3714fb7eb825db3a9fe9e47e4a4");
     background-size: cover;
     background-position: right;
     max-width: cover;
@@ -95,7 +179,7 @@ font-family: 'Scope One', serif;
 .crownback{
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 15%;
+    padding-top: 5%;
     text-align: center;
     background-color: #310257;
     height: 100%;
@@ -105,21 +189,23 @@ font-family: 'Scope One', serif;
 .crownbg
 .front {
     font-family: 'Scope One', serif;
-    color: white;
-    padding-top: 15%;
+    color: navajowhite;
+    padding-top: 50%;
     text-align: center;
     font-size: 28px; 
-    background-image:url("http://images.unsplash.com/photo-1488718729626-53eaa41c0848?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=f15b79c41d763f3a3516cc74af03e722");
+    background-image: url("http://images.unsplash.com/photo-1488718729626-53eaa41c0848?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=f15b79c41d763f3a3516cc74af03e722");
+    opacity: 88%;
     background-size: cover;
     background-position: right;
     max-width: cover;
     height: cover;      
 }
 
-.throatback{
+
+.throatback {
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 15%;
+    padding-top: 5%;
     background-color: blue;
     height: 100%;
     width: 100%;
@@ -128,8 +214,8 @@ font-family: 'Scope One', serif;
 .throatbg
 .front{
     font-family: 'Scope One', serif;
-    color: white;
-    padding-top: 15%;
+    color: navajowhite;
+    padding-top: 50%;
     text-align: center;
     font-size: 28px; 
     background-image:url("http://images.unsplash.com/photo-1489669451184-1300032d41ee?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=ebdd42c9c5be02b1fb10624023b5d679");
@@ -142,8 +228,8 @@ font-family: 'Scope One', serif;
 .thirdeyebg
 .front{
     font-family: 'Scope One', serif;
-    color: white;
-    padding-top: 15%;
+    color: navajowhite;
+    padding-top: 50%;
     text-align: center;
     font-size: 28px; 
     background-image:url("https://images.unsplash.com/photo-1473229903343-d7903343f6c0?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=20b0df67badc12b3d487a495e2392d39");
@@ -154,7 +240,7 @@ font-family: 'Scope One', serif;
 .thirdeyeback{
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 15%;
+    padding-top: 5%;
     background-color:#850B6D;
     height: 100%;
     width: 100%;
@@ -162,7 +248,7 @@ font-family: 'Scope One', serif;
 .heartback{
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 15%;
+    padding-top: 5%;
     background-color: #2CC503;
     height: 100%;
     width: 100%;
@@ -170,12 +256,12 @@ font-family: 'Scope One', serif;
 .heartbg
 .front {
     font-family: 'Scope One', serif;
-    color: white;
-    padding-top: 15%;
+    color: navajowhite;
+    padding-top: 50%;
     text-align: center;
     font-size: 28px; 
     background-color: #DF3E0B;
-    background-image:url("https://images.unsplash.com/photo-1475518845976-0fd87b7e4e5d?dpr=1&auto=format&fit=crop&w=767&h=512&q=80&cs=tinysrgb&crop=&bg=");
+    background-image:url("https://images.unsplash.com/photo-1487435636644-3ad040f0195b?dpr=");
     background-size: cover;
     max-width: cover;
     height: cover;  
@@ -194,8 +280,8 @@ font-family: 'Scope One', serif;
 .solarplexbg
 .front {
     font-family: 'Scope One', serif;
-    color: white;
-    padding-top: 15%;
+    color: navajowhite;
+    padding-top: 50%;
     text-align: center;
     font-size: 28px; 
     background-image:url("https://images.unsplash.com/photo-1482623167695-c6268f3eb9b3?dpr=1&auto=format&fit=crop&w=767&h=1151&q=80&cs=tinysrgb&crop=&bg=");
@@ -207,7 +293,7 @@ font-family: 'Scope One', serif;
 .solarback{
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 15%;
+    padding-top: 5%;
     background-color: #C89903;
     height: 100%;
     width: 100%;
@@ -216,11 +302,11 @@ font-family: 'Scope One', serif;
 .sacralbg
 .front {
     font-family: 'Scope One', serif;
-    color: white;
-    padding-top: 15%;
+    color: navajowhite;
+    padding-top: 50%;
     text-align: center;
     font-size: 28px; 
-    background-image:url("http://images.unsplash.com/photo-1414521203994-7efc0bc37d65?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=ecd2e15eea8d97898588c7e806cf8035");
+    background-image:url("https://images.unsplash.com/photo-1467766864651-0f10ea01c1bc?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=7f15dfb58b9b62be4c49bb8a52516886");
     background-size: cover;
     max-width: cover;
     height: cover;  
@@ -228,7 +314,7 @@ font-family: 'Scope One', serif;
 .sacralback{
     font-family: 'Scope One', serif;
     color: white;
-    padding-top: 15%;
+    padding-top: 5%;
     background-color: #DF3E0B;
     height: 100%;
     width: 100%;
@@ -236,7 +322,7 @@ font-family: 'Scope One', serif;
 .rootback{
     font-family: 'Scope One', serif;
     color: white;
-    padding-top:25%;
+    padding-top: 5%;
     text-align: center;
     font-size: 18px; 
     background-color: #F01C16;
@@ -246,7 +332,8 @@ font-family: 'Scope One', serif;
 .rootbg
 .front {
     font-family: 'Scope One', serif;
-    color: white;
+    color: navajowhite;
+    padding-top: 50%;
     text-align: center;
     font-size: 28px; 
     background-color: #DF3E0B;
@@ -267,8 +354,8 @@ font-family: 'Scope One', serif;
 .back {
     border-style: 1px, solid;
     display: inline-block;
-    width: 320px;
-    height: 480px;
+    width: 356px;
+    height: 280px;
 }
 .flipper {
   transition: 0.6s;
@@ -352,3 +439,21 @@ footer {
 footer p {
   margin-bottom: .25rem;
 }
+
+.pinkheart {
+    color:deeppink; 
+    font-size:16px;
+    display: inline-block;
+    font-family:'arial unicode MS', arial, geneva, sans-serif; 
+}
+
+.form-area
+{
+    background-color: #FAFAFA;
+	padding: 10px 40px 60px;
+	margin: 10px 0px 60px;
+	border: 1px solid #18142D;
+	}
+
+
+

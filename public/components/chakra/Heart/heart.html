@@ -8,9 +8,9 @@
                 
 -->
       
-       <script src="./public/components/Root/rootCtrlr.js"></script>
+       <script src="./public/components/Heart/heartCtrlr.js"></script>
                  
-<div class="container" ng-controller="rootCtrlr">
+<div class="container" ng-controller="heartCtrlr">
 
 
 	<br/>
@@ -21,10 +21,12 @@
 
 <div class="row">
   <div class="col-sm-12" align="center">
+<!--
       <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
           Previous Chakra
               </button>{{currentPage+1 }} of {{ numberOfPages()}}
                <button ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">Next Chakra</button>
+-->
        
 <div class="row" align="left">
       
@@ -33,7 +35,7 @@
       <div class="background">    
       
     
-		<h4 ng-repeat="chakra in data | startFrom:currentPage*pageSize | limitTo:pageSize"> <strong> {{chakra.name}}</strong> 
+		<h4 ng-repeat="chakra in data | startFrom:4*pageSize | limitTo:pageSize"> <strong> {{chakra.name}}</strong> 
 		<br><br>
 		<strong>Location: </strong> {{chakra.location}} <br>
 		<strong>Description:</strong>
@@ -97,5 +99,3 @@
 	
 	
     </div>
-
-    
