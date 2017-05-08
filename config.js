@@ -1,3 +1,3 @@
 module.exports = {require('dotenv').config()
-    database: process.env.MONGOHQ_URL || "mongodb://localhost:27017/chakra",
+    database: process.env.MONGODB_URI || "mongodb://localhost:27017/chakra",
                 }
