@@ -1,11 +1,10 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
-
 var userSchema = new Schema({
     firstName: {
         type: String,
-       required: true
+        required: true
     },
     lastName: {
         type: String,
@@ -19,10 +18,11 @@ var userSchema = new Schema({
         type: String,
         required: true
     },
-    userAddress:{
-        state: String,
-        address: String
+    state: {
+        type: String
+    },
+    address: {
+        type: String
     }
 })
-
 module.exports = mongoose.model("User", userSchema);

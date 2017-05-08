@@ -41,6 +41,9 @@ app.config(['$locationProvider', '$routeProvider', function ($locationProvider, 
         })
         .when('/recommendation',{
             templateUrl: 'public/components/recommendation.html',
+        })
+        .when('/signup',{
+            templateUrl: 'public/components/auth/signup/signup.html',
         });
 }]);
 

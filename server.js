@@ -7,6 +7,8 @@ var mongoose = require("mongoose");
 var path = require("path");
 var config = require("./config");
 var logger = require("morgan");
+require("./models/userModel");
+
 //angular.module('7moods', ['ngRoute']);
 
 
@@ -27,6 +29,8 @@ mongoose.connect(config.database, function (err) {
 	if (err) throw err;
 	console.log("Successully connected to the database")
 });
+
+var User = mongoose.model("User");
 
 app.get('/', function(req,res){
 res.sendFile(path.join(__dirname + '/public/index.html'));    
@@ -54,6 +58,34 @@ app.get('*', function(req,res){
 res.sendFile(path.join(__dirname + '/public/index.html'));    
     
 })
+function create(req, res){
+    var user= new User({
+        firstName: req.body.firstname,
+        lastName: req.body.lastname,
+        email: req.body.email,
+        password: req.body.password,
+        state: req.body.state,
+        address: req.body.address
+    });
+    if (req){
+        User.findOne({
+            email: req.body.email
+        }).exec(function (err, existingUser) {
+            if (!existingUser) {
+                user.save(function(err){
+        console.log("user saved");
+        res.redirect("/");
+        if (err) return err;
+    })   }else {
+                    console.log("user exist")
+                }
+        })
+    }
+}
+
+app.post('/signup', create)
+    
+
 
 var file = (path.join(__dirname + '/public/components/chakra.json'));
 
