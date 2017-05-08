@@ -1,5 +1,35 @@
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Poiret One', cursive;
+font-family: 'Roboto', sans-serif;
+
+.peachbg {
+    background-color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+    display: inline-block;
+    box-sizing: content-box;
+}
+
+
+.peachbg{
+    box-sizing: content-box;
+    background-color: whitesmoke; 
+    color: grey;
+    font-family: 'Robotot', sans-serif;
+    padding: 25px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.recpage{
+    background-color:#676d79;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    display:inline-block;
+    padding: 50%;   
+}
+
 .line{
-    background-color: peachpuff;
     box-sizing: content-box;
     color: white;
     font-family: 'Poiret One';
@@ -9,9 +39,9 @@
 }
 
 .background {
-    background-color: #18142D;
+    background-color: whitesmoke;
     box-sizing: content-box;
-    color: white;
+    color: grey;
     font-family: 'Poiret One';
     padding: 15px;
     margin-top: 15px;
@@ -20,37 +50,55 @@
 
 .boxbackground {
     display: inline-block;
-    padding: 2px;    
+    padding: 3px;    
     background-color: transparent;
     box-sizing: content-box;
-    margin-bottom: 10px;  
+    margin: 3px;  
 }
 
 .box{
+    background-color: whitesmoke;
     box-sizing: content-box;
-    font-family: 'sans serif';
+    font-family: 'Roboto', sans-serif;
     color: grey;
     display: inline-block;
-    float: left;
-    padding-bottom: 0px;
+    padding-bottom: 20px;
 }
 
 .contact{
-   background-image:url("https://images.unsplash.com/photo-1473229903343-d7903343f6c0?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=20b0df67badc12b3d487a495e2392d39");
+   background-image:url("https://images.unsplash.com/photo-1469286714608-0defd688c4e3?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=a5f7a3714fb7eb825db3a9fe9e47e4a4");
     background-size: cover;
     background-color: white;
     background-position: inherit;
-    border: solid, 5px,;
+/*    border: solid, 5px,;*/
     color: white;
     padding-top: 100px;
     font-family: 'Scope One';
     font-size: 20px;
 }
 
-.jumbotron{
+.jumbotron {
+    background-image:url("https://images.unsplash.com/photo-1473229903343-d7903343f6c0?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=20b0df67badc12b3d487a495e2392d39");
     background-size: cover;
-    color: grey;
-    font-family: 'sans-serif';   
+    background-position: center;
+    font-family:  'sans-serif';   
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    margin-bottom: 0;
+    color: #efc2b1;
+    background-color: #fff;
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
 }
 
 
@@ -109,23 +157,41 @@
     padding: 15px;
 }
 
-.navbar-inverse{
-    color: #18142D;
-    background-color:  #18142D;
-    align-content: right;
+.navbar-brand {
+    font-family:'Josefin Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 600px;
+    color: #efc2b1;
 }
 
-.navbar
-.hover{
-    background-color: white;
+.navbar{
+    padding-right: 25px;
+    background-color: whitesmoke;
+    border-bottom-color: #efc2b1;
+    align-content: right;
+    padding-left: 25px;
+}
+
+.navbar .nav > li > a {
+    float: none;
+    color: grey;
+    background-color: whitesmoke;
+    border-bottom-color: #efc2b1;
+}
+
+.navbar .nav > li > a:hover {
+    padding: 15px;
+    float: none;
+    color: white ;
+    background-color: #efc2b1;
 }
 
 .btn{
-    background-color: transparent;
-    border: solid, 3px;
-    border-color: peachpuff;
-    color: grey;
-    padding: 10px;
+    background-color: grey;
+    border-color: grey;
+    border: 15px solid, #efc2b1;
+    color: #efc2b1;
+    padding: 15px;  
 }
 
 .greyback{
@@ -386,24 +452,7 @@ body {
   margin-bottom: 0;
 }
 
-.jumbotron {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-  margin-bottom: 0;
-  background-color: #fff;
-}
 
-.jumbotron p:last-child {
-  margin-bottom: 0;
-}
-
-.jumbotron-heading {
-  font-weight: 300;
-}
-
-.jumbotron .container {
-  max-width: 40rem;
-}
 
 .album {
   min-height: 50rem; 
@@ -427,8 +476,10 @@ body {
 .card-text {
   font-size: 85%;
 }
+
 .btn btn-secondary btn-lg{
-    background-color: white;
+    background-color: grey;
+    color: white;
 }
 
 footer {
@@ -441,7 +492,7 @@ footer p {
 }
 
 .pinkheart {
-    color:deeppink; 
+    color:peachpuff; 
     font-size:16px;
     display: inline-block;
     font-family:'arial unicode MS', arial, geneva, sans-serif; 
@@ -452,8 +503,16 @@ footer p {
     background-color: #FAFAFA;
 	padding: 10px 40px 60px;
 	margin: 10px 0px 60px;
-	border: 1px solid #18142D;
+	border: 1px solid lightgray;
 	}
+
+.about {
+    font-family: "Roboto";
+    background-color: whitesmoke;
+    font-size: 18px;
+    color: grey;
+
+}
 
 
 

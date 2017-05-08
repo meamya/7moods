@@ -38,6 +38,9 @@ app.config(['$locationProvider', '$routeProvider', function ($locationProvider, 
         })
         .when('/sacral',{
             templateUrl: 'public/components/chakra/Sacral/sacral.html',
+        })
+        .when('/recommendation',{
+            templateUrl: 'public/components/recommendation.html',
         });
 }]);
 
