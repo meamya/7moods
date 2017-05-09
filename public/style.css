@@ -2,14 +2,9 @@ font-family: 'Josefin Sans', sans-serif;
 font-family: 'Poiret One', cursive;
 font-family: 'Roboto', sans-serif;
 
-.peachbg {
-    background-color: whitesmoke;
-    font-family: 'Roboto', sans-serif;
-    color: grey;
-    display: inline-block;
-    box-sizing: content-box;
+.glyphicon-menu-hamburger {
+  font-size: npx;
 }
-
 
 .peachbg{
     box-sizing: content-box;
