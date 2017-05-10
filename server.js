@@ -20,6 +20,7 @@ var port = process.env.PORT || 8000;
 
 //section 2 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "/")))
 app.use(logger("dev"));
 
@@ -58,7 +59,8 @@ app.get('*', function(req,res){
 res.sendFile(path.join(__dirname + '/public/index.html'));    
     
 })
-function create(req, res){
+function createUser(req, res){
+    console.log(req.body);
     var user= new User({
         firstName: req.body.firstname,
         lastName: req.body.lastname,
@@ -67,23 +69,27 @@ function create(req, res){
         state: req.body.state,
         address: req.body.address
     });
-    if (req){
-        User.findOne({
-            email: req.body.email
-        }).exec(function (err, existingUser) {
-            if (!existingUser) {
-                user.save(function(err){
-        console.log("user saved");
-        res.redirect("/");
-        if (err) return err;
-    })   }else {
-                    console.log("user exist")
-                }
-        })
-    }
+    User
+     .findOne({ email: req.body.email }, function (err, existingUser) {
+        if (!existingUser) {
+            user.save(function(err){
+                console.log("user saved");
+                res.status(201).send({
+                    message: "user successfully signed up",
+                    success: true
+                })
+                if (err) return err;
+            });
+        }else {
+            res.status(409).send({
+                message: "user exists",
+                success: false
+            })
+        }
+        });
 }
 
-app.post('/signup', create)
+app.post('/api/signup', createUser);
     
 
 

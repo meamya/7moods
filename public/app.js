@@ -175,6 +175,24 @@ app.filter('startFrom',function() {
     }
 });
 
+app.controller('SignUpCtrlr', function($scope, $http) {
+    $scope.signup = function() {
+        var data = {
+            firstname: $scope.firstName,
+            lastname: $scope.lastName,
+            email: $scope.email,
+            state: $scope.state,
+            address: $scope.address,
+            password: $scope.password
+        };
+         $http.post('/api/signup', data)
+         .then(function(response){
+             console.log(response);
+         },function(error){
+             console.log(error);
+         });
+               }
+});
 
 
 
