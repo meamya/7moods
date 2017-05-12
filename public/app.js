@@ -77,7 +77,7 @@ app.controller('solarplexusCtrlr', function($scope, $http, getChakras) {
         })
         .then(function(){
         // getChakras.getChakras().then(function (data) {
-            $scope.currentPage = 0;
+            $scope.currentPage = 2;
             $scope.pageSize = 1;
             $scope.data = $scope.chakras;
             // $scope.data.push($scope.chakras);
@@ -93,7 +93,7 @@ app.controller('sacralCtrlr', function($scope, $http, getChakras) {
         })
         .then(function(){
         // getChakras.getChakras().then(function (data) {
-            $scope.currentPage = 0;
+            $scope.currentPage = 1;
             $scope.pageSize = 1;
             $scope.data = $scope.chakras;
             // $scope.data.push($scope.chakras);
@@ -109,7 +109,7 @@ app.controller('heartCtrlr', function($scope, $http, getChakras) {
         })
         .then(function(){
         // getChakras.getChakras().then(function (data) {
-            $scope.currentPage = 0;
+            $scope.currentPage = 4;
             $scope.pageSize = 1;
             $scope.data = $scope.chakras;
             // $scope.data.push($scope.chakras);
@@ -125,7 +125,7 @@ app.controller('throatCtrlr', function($scope, $http, getChakras) {
         })
         .then(function(){
         // getChakras.getChakras().then(function (data) {
-            $scope.currentPage = 0;
+            $scope.currentPage = 3;
             $scope.pageSize = 1;
             $scope.data = $scope.chakras;
             // $scope.data.push($scope.chakras);
@@ -141,7 +141,7 @@ app.controller('thirdeyeCtrlr', function($scope, $http, getChakras) {
         })
         .then(function(){
         // getChakras.getChakras().then(function (data) {
-            $scope.currentPage = 0;
+            $scope.currentPage = 5;
             $scope.pageSize = 1;
             $scope.data = $scope.chakras;
             // $scope.data.push($scope.chakras);
@@ -157,7 +157,7 @@ app.controller('crownCtrlr', function($scope, $http, getChakras) {
         })
         .then(function(){
         // getChakras.getChakras().then(function (data) {
-            $scope.currentPage = 0;
+            $scope.currentPage = 6;
             $scope.pageSize = 1;
             $scope.data = $scope.chakras;
             // $scope.data.push($scope.chakras);
@@ -175,7 +175,7 @@ app.filter('startFrom',function() {
     }
 });
 
-app.controller('SignUpCtrlr', function($scope, $http) {
+app.controller('SignUpCtrlr', function($scope, $http, $location) {
     $scope.signup = function() {
         var data = {
             firstname: $scope.firstName,
@@ -188,6 +188,9 @@ app.controller('SignUpCtrlr', function($scope, $http) {
          $http.post('/api/signup', data)
          .then(function(response){
              console.log(response);
+             if(response.data.success){
+                 $location.path("/signin")
+             }
          },function(error){
              console.log(error);
          });

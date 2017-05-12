@@ -59,6 +59,7 @@ app.get('*', function(req,res){
 res.sendFile(path.join(__dirname + '/public/index.html'));    
     
 })
+
 function createUser(req, res){
     console.log(req.body);
     var user= new User({
