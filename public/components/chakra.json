@@ -16,8 +16,14 @@
         "mantra": "I AM SAFE, I AM GROUNDED",
         "organs": "skeletal system/bones, legs, bones, foot",
         "color": "red",
-        "function": "survival, fight or flight, physical identity, stability, self sufficient, survival"
+        "function": "survival, fight or flight, physical identity, stability, self sufficient, survival",
+        "box": "Root Care Box",
+            "keywords": "",
+            "boxdescription":"Each box contains a unique set of curated items including: essential oils, incense, specialty teas/coffee, stationary, spices, soaps, hand-made items, accessories, and recipes specific to the chakra.",
+            "image": "",
+            "price":"$45.00"
     },
+    
     {
         "id": 2,
         "name": "THE SACRAL CHAKRA",
@@ -34,7 +40,12 @@
         "mantra": "I HONOR MY BODY, I AM CREATIVE",
         "organs": "reproductive organs, muscular system, bladder",
         "color": "orange",
-        "function": "vitality, sex, creation, water regulation, elimination"
+        "function": "vitality, sex, creation, water regulation, elimination",
+        "box": "Sacral Care Box",
+        "keywords": "",
+        "boxdescription":"",
+        "image": "",
+        "price":""
     },
     {
         "id": 3,
@@ -51,7 +62,12 @@
         "mantras": "I can do what I will",
         "associated organs": "digestive system, stomach, pancreas",
         "color": "yellow",
-        "function": "willpower, personal power, metabolism"
+        "function": "willpower, personal power, metabolism",
+        "box": "Solar Plexus Care Box",
+        "keywords": "",
+        "description":"",
+        "image": "",
+        "price":""
     },
     {
         "id": 4,
@@ -69,7 +85,12 @@
         "mantras": "I communicate my truth with ease",
         "organs": "thyroid, endocrine, nose, ear, mouth",
         "color": "sky blue",
-        "function": "emotional responsibility and self expression"
+        "function": "emotional responsibility and self expression",
+        "box": "Throat Care Box",
+        "keywords": "",
+        "boxdescription":"",
+        "image": "",
+        "price":""
     },
     {
         "id": 5,
@@ -87,7 +108,12 @@
         "mantras": "I love, I am loved, I am love",
         "organs": "heart, circulatory system, lungs",
         "color": "green and/or pink",
-        "function": "happiness, compassion, emotional empowerment"
+        "function": "happiness, compassion, emotional empowerment",
+        "box": "Heart Care Box",
+        "keywords": "",
+        "boxdescription":"",
+        "image": "",
+        "price":""
     },
     {
         "id": 6,
@@ -105,7 +131,12 @@
         "mantras": "I trust my instincts",
         "organs": "pineal gland, pituitary gland, eyes, brain",
         "color": "indigo",
-        "function": "regulates sleep patterns, intuition, awareness, and imagination"
+        "function": "regulates sleep patterns, intuition, awareness, and imagination",
+        "box": "ThirdEye Care Box",
+        "keywords": "",
+        "boxdescription":"",
+        "image": "",
+        "price":""
     },
     {
         "id": 7,
@@ -123,6 +154,11 @@
         "mantras": "",
         "organs": "",
         "color": "white, violet",
-        "function": "intuitive knowing, connection to spiritual self"
+        "function": "intuitive knowing, connection to spiritual self",
+        "box": "Care Care Box",
+        "keywords": "",
+        "boxdescription":"",
+        "image": "",
+        "price":""
     }
 ]

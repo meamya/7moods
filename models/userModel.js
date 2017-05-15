@@ -1,6 +1,10 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
+var cartSchema = new Schema({
+    
+    
+})
 var userSchema = new Schema({
     firstName: {
         type: String,
