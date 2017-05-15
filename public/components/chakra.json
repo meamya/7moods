@@ -21,7 +21,12 @@
             "keywords": "",
             "boxdescription":"Each box contains a unique set of curated items including: essential oils, incense, specialty teas/coffee, stationary, spices, soaps, hand-made items, accessories, and recipes specific to the chakra.",
             "image": "",
-            "price":"$45.00"
+        "box1price":"$55.00",
+        "box1description": "one month of a selected chakra",
+        "box2price":"$156.00",
+        "box2price": "three months of a selected chakra",
+        "box3price":"$350.00",
+        "box3price": "7 months of each of the 7 chakras"
     },
     
     {
@@ -32,7 +37,7 @@
         "element": "Water",
         "challenges": "controlling relationships, limiting or conflicting beliefs",
         "location": "between navel and pubic, lower back, and sexual organs",
-        "foods": "carrots, oranges, sweet potatoes, mangos, cantaloupe, honey, peaches, apricots",
+        "foods": "carrots, oranges, sweet potatoes, mangos, cantaloupe, honey, peaches, nuts & seeds, fish/seafood, omega3, apricots",
         "essentialoils": "ginger, jasmine, juniper, cedar, sandlewood, rose",
         "gemsstones": "coral",
         "balanced": "openess, ability to embrace change, healthy relationships, healthy sexual expression, creativity, confidence, movement",
@@ -45,7 +50,12 @@
         "keywords": "",
         "boxdescription":"",
         "image": "",
-        "price":""
+        "box1price":"$55.00",
+        "box1description": "one month of a selected chakra",
+        "box2price":"$156.00",
+        "box2price": "three months of a selected chakra",
+        "box3price":"$350.00",
+        "box3price": "7 months of each of the 7 chakras"
     },
     {
         "id": 3,
@@ -67,7 +77,12 @@
         "keywords": "",
         "description":"",
         "image": "",
-        "price":""
+        "box1price":"$55.00",
+        "box1description": "one month of a selected chakra",
+        "box2price":"$156.00",
+        "box2price": "three months of a selected chakra",
+        "box3price":"$350.00",
+        "box3price": "7 months of each of the 7 chakras"
     },
     {
         "id": 4,
@@ -90,7 +105,12 @@
         "keywords": "",
         "boxdescription":"",
         "image": "",
-        "price":""
+        "box1price":"$55.00",
+        "box1description": "one month of a selected chakra",
+        "box2price":"$156.00",
+        "box2price": "three months of a selected chakra",
+        "box3price":"$350.00",
+        "box3price": "7 months of each of the 7 chakras"
     },
     {
         "id": 5,
@@ -113,7 +133,12 @@
         "keywords": "",
         "boxdescription":"",
         "image": "",
-        "price":""
+        "box1price":"$55.00",
+        "box1description": "one month of a selected chakra",
+        "box2price":"$156.00",
+        "box2price": "three months of a selected chakra",
+        "box3price":"$350.00",
+        "box3price": "7 months of each of the 7 chakras"
     },
     {
         "id": 6,
@@ -123,7 +148,7 @@
         "element": "light",
         "challenges": "",
         "location": "center of forehead, slightly above brow",
-        "foods": "chocolate, berries, coconut oil, tea, red wine ",
+        "foods": "chocolate, berries, coconut oil, tea, red wine, purple cabbage, plums, grapes, figs",
         "essentialoils": "chamomile, sage, palo santo, jasmine",
         "gemsstones": "amethyst",
         "balanced": "knowing, open-mindedness, memory",
@@ -131,12 +156,17 @@
         "mantras": "I trust my instincts",
         "organs": "pineal gland, pituitary gland, eyes, brain",
         "color": "indigo",
-        "function": "regulates sleep patterns, intuition, awareness, and imagination",
+        "function": "perception, regulates sleep patterns, intuition, awareness, and imagination",
         "box": "ThirdEye Care Box",
         "keywords": "",
         "boxdescription":"",
         "image": "",
-        "price":""
+        "box1price":"$55.00",
+        "box1description": "one month of a selected chakra",
+        "box2price":"$156.00",
+        "box2price": "three months of a selected chakra",
+        "box3price":"$350.00",
+        "box3price": "7 months of each of the 7 chakras"
     },
     {
         "id": 7,
@@ -144,21 +174,26 @@
         "meaning": "",
         "description": "",
         "element": "thought/will",
-        "challenges": "learning to live in the now",
+        "challenges": "feeling unworthy, learning to live in the now",
         "location": "top of the head",
-        "foods": "",
-        "essentialoils": "",
+        "foods": "fasting, water",
+        "essentialoils": "lavender, francincense, jasmine, myrrh, rose",
         "gemsstones": "",
         "balanced": "ability to see bigger picture, ",
         "unbalanced": "loss of identity, lack of purpose, distrust, obsession over spiritual matters",
-        "mantras": "",
-        "organs": "",
+        "mantras": "I trust",
+        "organs": "pineal gland, skin ",
         "color": "white, violet",
         "function": "intuitive knowing, connection to spiritual self",
         "box": "Care Care Box",
-        "keywords": "",
-        "boxdescription":"",
+        "keywords": "pineal gland, brain",
+        "boxdescription":"A curated collection of specialty teas, oils, personal care items, recipes, and something creative",
         "image": "",
-        "price":""
+        "box1price":"$55.00",
+        "box1description": "one month of a selected chakra",
+        "box2price":"$156.00",
+        "box2price": "three months of a selected chakra",
+        "box3price":"$350.00",
+        "box3price": "7 months of each of the 7 chakras"
     }
 ]
