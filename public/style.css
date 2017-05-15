@@ -12,12 +12,17 @@ font-family: 'Roboto', sans-serif;
     padding: 35px;
     margin-right: 30px;
     margin-top:-55px;    
-  
 }
 
 .dropdown-menu{
     box-sizing: content-box;
     padding: 25px;   
+}
+
+.button {
+    background-color: transparent;
+    border: grey;
+        
 }
 
 .fa {
@@ -184,7 +189,7 @@ font-family: 'Roboto', sans-serif;
 
 .navbar-inverse{
     padding-right: 25px;
-    background-color: grey;
+    background-color: #310257;
     border-bottom-color: #efc2b1;
     align-content: right;
     padding-left: 25px;
@@ -205,11 +210,11 @@ font-family: 'Roboto', sans-serif;
 }
 
 .btn{
-    background-color: transparent;
+    background-color: #310257;
     border-color: #efc2b1;
-    border: 2px solid;
+    border: 1px solid;
     color: #efc2b1;
-    padding: 5px;  
+    padding: 10px;  
 }
 
 .greyback{
