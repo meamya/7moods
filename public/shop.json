@@ -1,23 +1,23 @@
 [
   {
-    "product_type": "1MONTH CREATIVE CARE BOX",
+    "product_type": "1 CREATIVE CARE BOX",
     "image_url": "http://res.cloudinary.com/dlree1c9i/image/upload/v1493510581/Packlane_Snapshot_3_fk29if.png",
     "options": true,
     "packages": ["root care", "solar plexus care", "sacral care", "heart care", "throat care", "thirdeye care", "crown care"],
-    "description": "one curated box",
+    "description": "select one curated box type",
     "price": "$55.00"
   },
   {
-    "product_type": "3MONTH CREATIVE CARE SUBCRIPTION BOX",
+    "product_type": "3 MONTH CREATIVE CARE SUBCRIPTION BOX",
     "image_url": "http://res.cloudinary.com/dlree1c9i/image/upload/v1493510581/Packlane_Snapshot_3_fk29if.png",
     "options": true,
     "packages": ["root care", "solar plexus care", "sacral care", "heart care", "throat care", "thirdeye care", "crown care", "1) root 2) crown, 3) thirdeye", "1) root 2) throat, 3) heart"],
-    "description": "one curated box type for 3 months",
+    "description": "one curated box type or a combination of 3 different types for 3 months",
     "price": "$156.00"
   },
 
   {
-    "product_type": "7MONTH CREATIVE CARE SUBCRIPTION BOX",
+    "product_type": "7 MONTH CREATIVE CARE SUBCRIPTION BOX",
     "image_url": "http://res.cloudinary.com/dlree1c9i/image/upload/v1493510581/Packlane_Snapshot_3_fk29if.png",
     "options": false,
     "packages": ["N/A"],

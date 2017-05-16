@@ -2,21 +2,22 @@
     <div class=about>
 <a href="/">Back to affirmation cards</a></div>
 
-        <h2 align="center">Pre-order to recieve a sneak peak </h2>
+        <h2 align="center"></h2>
+        
         <div class="container">
-            <div class="container">
-
+        
             <div class="row">
                 <div ng-repeat="box in boxes">
                     <div class="col-sm-4">
                         <div class="thumbnail">
                             <h3 align="center">{{box.product_type}}</h3>
                             <img ng-src="{{box.image_url}}" alt="...">
-                            <div class="caption" align="center">
-                                {{box.description}}
+                            <div class="caption" align="center"><h4>
+                                {{box.description}}</h4>
+                                <br>
                                 <br>
                                 <span ng-show="{{box.options}}">
-                        <p>Select A Box (or Combo)</p>
+                        <p align="left">Select</p>
                         <div class="form-group">
                             <select class="form-control"  id="exampleSelect1">
                                 <option value="{{package}}" ng-repeat="package in box.packages">{{package}}</option>
