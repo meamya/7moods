@@ -47,11 +47,17 @@ var file = path.join(__dirname + '/public/components/chakra.json');
             return console.log(err); 
         } 
         res.send(data); 
-//    Chakra.getChakra(function(err,chakras){
-//        if(err){
-//            throw err;
-//        }
-//        res.json(chakras);
+        });
+    });
+app.get('/api/shop', function(req,res){
+var file = path.join(__dirname + '/public/shop.json'); 
+                 
+
+    fs.readFile(file, 'utf8',function (err,data) { 
+        if (err) { 
+            return console.log(err); 
+        } 
+        res.send(data); 
         });
     });
 

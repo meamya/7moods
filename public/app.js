@@ -196,7 +196,12 @@ app.controller('SignUpCtrlr', function($scope, $http, $location) {
          });
                }
 });
-
+app.controller('ShopCtrlr', function($scope, $timeout, $http, $location){
+   // $scope.boxes = [];
+    $http.get("/api/shop").then(function(response) {
+            $scope.boxes = response.data;
+        });      
+});
 
 
 

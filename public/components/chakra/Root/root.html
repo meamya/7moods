@@ -7,33 +7,33 @@
                     </form>
                 
 -->
-      
-       <script src="./public/components/Root/rootCtrlr.js"></script>
-                 
+
+<script src="./public/components/Root/rootCtrlr.js"></script>
+
 <div class="container" ng-controller="rootCtrlr">
 
 
-	<br/>
-	<div class="container">
-	
-	<a href="/">Back to affirmation cards</a>
+    <br/>
+    <div class="container">
+
+        <a href="/">Back to affirmation cards</a>
 
 
-<div class="row">
-  <div class="col-sm-12" align="center">
-      <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
-          Previous Chakra
-              </button>{{currentPage+1 }} of {{ numberOfPages()}}
-               <button ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">Next Chakra</button>
-       
-<div class="row" align="left">
-      
-     
-      <div class="col-sm-8"> 
-      <div class="background">    
-      
-    
-		<h4 ng-repeat="chakra in data | startFrom:currentPage*pageSize | limitTo:pageSize"> <strong> {{chakra.name}}</strong> 
+        <div class="row">
+            <div class="col-sm-12" align="center">
+                <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+                    Previous Chakra
+                </button>{{currentPage+1 }} of {{ numberOfPages()}}
+                <button ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">Next Chakra</button>
+
+                <div class="row" align="left">
+
+
+                    <div class="col-sm-8">
+                        <div class="background">
+
+
+                            <h4 ng-repeat="chakra in data | startFrom:currentPage*pageSize | limitTo:pageSize"> <strong> {{chakra.name}}</strong> 
 		<br><br>
 		<strong>Location: </strong> {{chakra.location}} <br>
 		<strong>Description:</strong>
@@ -67,36 +67,35 @@
 		<strong></strong>
 
 		</h4>
-	
-     
-     </div>
-    </div>
-           
-           <div class="container" display="inline-block">
-<!--            <div class="col-sm-4">      -->
- 
-   <div class="row">
-    <div class="card">
-      <div class="card-block" class="background"><h4 ng-repeat="chakra in data | startFrom:currentPage*pageSize | limitTo:pageSize"><strong> {{chakra.box}}</strong>
+
+
+                        </div>
+                    </div>
+
+                    <div class="container" display="inline-block">
+                        <!--            <div class="col-sm-4">      -->
+
+                        <div class="row">
+                            <div class="card">
+                                <div class="card-block" class="background">
+                                    <h4 ng-repeat="chakra in data | startFrom:currentPage*pageSize | limitTo:pageSize"><strong> {{chakra.box}}</strong>
 		<br><br><p class="card-title" ng-repeat="chakra in data"> {{chakra.boxdescription}} </p>
          <p> </p>    
-          <a href="/signup" class="btn btn-primary"> SIGN-UP FOR EARLY ACCESS </a>
+          <a href="/shop" class="btn btn-primary"> SIGN-UP FOR EARLY ACCESS </a>
 <img ng-src="http://res.cloudinary.com/dlree1c9i/image/upload/v1493483111/7moodsbox.png" width="350px" height="auto"/>
         
           </h4>
-    </div>
-      </div>
-        </div>
-        </div> 
-<!--</div>-->
-  </div>
-    </div>
-<!--    </div>-->
-    
-	
-	
-	
-	
-    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--</div>-->
+                </div>
+            </div>
+            <!--    </div>-->
 
-    
+
+
+
+
+        </div>
