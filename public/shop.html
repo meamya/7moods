@@ -5,10 +5,10 @@
         <h2 align="center"></h2>
         
         <div class="container">
-        
             <div class="row">
                 <div ng-repeat="box in boxes">
-                    <div class="col-sm-4">
+                    <div class="clearfix" ng-if="$index % 3 == 0"></div>
+                    <div class="col-xs-4">
                         <div class="thumbnail">
                             <h3 align="center">{{box.product_type}}</h3>
                             <img ng-src="{{box.image_url}}" alt="...">
@@ -32,7 +32,7 @@
             </div>
         </div>
     </div>
-</div>
+
 
 
 
