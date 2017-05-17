@@ -29,22 +29,26 @@
 </head>
     <body ng-app="MyApp">
         	 <div class="fluid-container">
-    <div class="navbar-inverse">
-     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="dropdown">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+      
+      <div class="navbar-inverse">
+              <button type="button" class="navbar-toggle" ng-init="navCollapsed=true" ng-click="navCollapsed = !navCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+        </button>
+    
       <a class="navbar-brand" href="/">7moods</a>
-        <div class="collapse navbar-collapse" id="navbar">
-      <ul class="nav navbar-nav navbar-right">      
+        <div id="navbar" class="collapse navbar-collapse" ng-class="{'in':!navCollapsed}">
+    
+       <ul class="nav navbar-nav navbar-right">      
         <li ng-class="navClass('home')"><a href='/'>CHAKRA CARE COLLECTION</a></li>
         <li ng-class="navClass('about')"><a href='/about'>OUR STORY</a></li>
         <li ng-class="navClass('shop')"><a href='/shop'>SHOP</a></li>
         <li ng-class="navClass('contact')"><a href='/contact'>CONTACT</a></li>
         <form class="navbar-form navbar-left" role="search">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="search">
+                            <input type="text" class="form-control" placeholder="search by keywords">
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form>
@@ -93,7 +97,7 @@
                                 </div></li></ul></li></ul></ul></div></div>
         </div>
        
-
+      
                        
          <div class="jumbotron jumbotron-fluid">
 <div class="container-fluid" align="right">

@@ -5,7 +5,10 @@ font-family: 'Roboto', sans-serif;
 .glyphicon-menu-hamburger {
   font-size: npx;
 }
-
+.col-xs-4{
+   display: inline-block;
+    
+}
 
 .content {
     display: inline-block;
