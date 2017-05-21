@@ -54,7 +54,15 @@
                     </form>
 
         <li class="divider-vertical"></li>
-                <ul class="nav navbar-nav navbar-right">
+           <ul ng-show="currentUser" class="nav navbar-nav navbar-right">
+               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+
+               <li ng-class="navClass('account')">
+                   <a href="#">ACCOUNT</a>
+               </li>
+
+           </ul>
+                <ul  ng-show="!currentUser" class="nav navbar-nav navbar-right">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                        <li>
                         <p class="navbar-text">Already a member?</p>
@@ -66,10 +74,10 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         Login via
-                                        
+
                                             <i class="fa fa-facebook" aria-hidden="true"></i>
 
-                                            <a href="/auth/instagram"><i  class="fa fa-instagram"> </i></a>
+                                            <a href="http://localhost:8000/auth/instagram"><i  class="fa fa-instagram"> </i></a>
                                         </div>
                                         or
                                         <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
@@ -94,7 +102,11 @@
                                     </div>
                                     <div class="bottom text-center">
                                         New here ? <a href="/signup"><b>sign up</b></a>
-                                </div></li></ul></li></ul></ul></div></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul></ul></div></div>
         </div>
        
       

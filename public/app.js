@@ -1,10 +1,9 @@
 var app = angular.module('MyApp', ["ngRoute"]);
 app.config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
-    $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(true);
     $routeProvider
-        .when('/', {
+        .when('/home', {
             templateUrl: 'public/components/home.html',
-            controller: 'NavCtrl'
         })
         .when('/root', {
             templateUrl: 'public/components/chakra/Root/root.html',
@@ -35,6 +34,9 @@ app.config(['$locationProvider', '$routeProvider', function ($locationProvider, 
         })
         .when('/shop',{
             templateUrl: 'public/shop.html',
+            resolve: {
+                logincheck: checkLoggedin
+            }
         })
         .when('/sacral',{
             templateUrl: 'public/components/chakra/Sacral/sacral.html',
@@ -44,8 +46,29 @@ app.config(['$locationProvider', '$routeProvider', function ($locationProvider, 
         })
         .when('/signup',{
             templateUrl: 'public/components/auth/signup/signup.html',
+        })
+        .otherwise({
+          redirectTo: '/home'
         });
 }]);
+
+var checkLoggedin = function ($q, $timeout, $http, $location, $rootScope) {
+  var deferred = $q.defer();
+
+  $http.get('/loggedin').success(function(user) {
+    $rootScope.errorMessage = null;
+    //User is Authenticated
+    if (user !== '0') {
+      $rootScope.currentUser = user;
+      deferred.resolve();
+    } else { //User is not Authenticated
+      $rootScope.errorMessage = 'You need to log in.';
+      deferred.reject();
+      $location.url('/signup');
+    }
+  });
+  return deferred.promise;
+}
 
 app.factory('getChakras',['$http', function ($http) {
   return {
@@ -156,11 +179,9 @@ app.controller('crownCtrlr', function($scope, $http, getChakras) {
             $scope.chakras = response.data;
         })
         .then(function(){
-        // getChakras.getChakras().then(function (data) {
             $scope.currentPage = 6;
             $scope.pageSize = 1;
             $scope.data = $scope.chakras;
-            // $scope.data.push($scope.chakras);
             $scope.numberOfPages=function(){
                 return Math.ceil($scope.data.length/$scope.pageSize);                
             }
