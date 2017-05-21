@@ -26,7 +26,7 @@ font-family: 'Roboto', sans-serif;
 
 .dropdown-menu{
     box-sizing: content-box;
-    padding: 25px;   
+    padding: 35px;   
 }
 
 .button {
@@ -35,14 +35,29 @@ font-family: 'Roboto', sans-serif;
 }
 
 .fa {
-    padding: 10px;
-    align-content: center;
+    padding: 10px;    
     width: 30px;
 }
 
 /* Facebook */
 .fa-facebook {
     background: #3B5998;
+    color: white;
+}
+
+
+.fa-instagram {
+    background: #ea0075;
+    color: white;
+}
+
+.fa-pinterest{
+    background: #c92228;
+    color: white;  
+}
+
+.fa-google-plus{
+    background: #F4511E;
     color: white;
 }
 
