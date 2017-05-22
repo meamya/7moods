@@ -47,6 +47,9 @@ app.config(['$locationProvider', '$routeProvider', function ($locationProvider, 
         .when('/signup',{
             templateUrl: 'public/components/auth/signup/signup.html',
         })
+        .when('/dashboard',{
+            templateUrl: 'public/components/auth/login/dashboard.html',
+        })
         .otherwise({
           redirectTo: '/home'
         });
@@ -57,8 +60,8 @@ var checkLoggedin = function ($q, $timeout, $http, $location, $rootScope) {
 
   $http.get('/loggedin').success(function(user) {
     $rootScope.errorMessage = null;
-    //User is Authenticated
-    if (user !== '0') {
+console.log(user)
+        if (user !== '0') {
       $rootScope.currentUser = user;
       deferred.resolve();
     } else { //User is not Authenticated
