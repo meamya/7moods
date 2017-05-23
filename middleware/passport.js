@@ -1,4 +1,5 @@
 var InstagramStrategy = require('passport-instagram').Strategy;
+var LocalStrategy = require('passport-local').Strategy;
 var User =  require('../models/userModel');
 
 var INSTAGRAM_CLIENT_ID = "a7f327fff3e74aa186527f70a8e1cef3";
@@ -9,6 +10,7 @@ var INSTAGRAM_CLIENT_SECRET = "065a7a61fdd34792a869d37013c1e490";
 module.exports = function(passport) {
 
   passport.serializeUser(function (user, done) {
+    console.log('here', user);
     done(null, user);
   });
 
@@ -16,7 +18,36 @@ module.exports = function(passport) {
     done(null, user);
   });
 
-  passport.use(new InstagramStrategy({
+  passport.use('local-signin', new LocalStrategy(
+    {
+      usernameField : 'email',
+      passwordField : 'password',
+      passReqToCallback : true
+    },
+    function(req, email, password, done) {
+
+      User.findOne({email: email}, function (err, user) {
+        if (err)
+          return done(err);
+        // if no user is found, return the message
+        if (!user)
+          return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
+
+        // if the user is found but the password is wrong
+        if (user.password !== password)
+          return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
+
+
+        // req.session.authenticated = true;
+        // req.authenticated = true;
+        done(null, user);
+        console.log(req.isAuthenticated());
+
+      })
+    }
+      ));
+
+  passport.use('instagram', new InstagramStrategy({
       clientID: INSTAGRAM_CLIENT_ID,
       clientSecret: INSTAGRAM_CLIENT_SECRET,
       callbackURL: "http://localhost:8000/auth/instagram/callback"
@@ -29,7 +60,7 @@ module.exports = function(passport) {
         }
 
         if (!err && user != null) {
-          done(null, user);
+          return done(null, user);
         } else {
           var name = profile.name;
           user = new User({
@@ -42,7 +73,7 @@ module.exports = function(passport) {
               console.log(err);  // handle errors!
             } else {
               console.log("saving user ...");
-              done(null, user);
+              return done(null, user);
             }
           });
         }

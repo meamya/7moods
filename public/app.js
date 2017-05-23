@@ -1,6 +1,5 @@
 var app = angular.module('MyApp', ["ngRoute"]);
-app.config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
-  $locationProvider.html5Mode(true);
+app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/home', {
             templateUrl: 'public/components/home.html',
@@ -31,12 +30,21 @@ app.config(['$locationProvider', '$routeProvider', function ($locationProvider, 
         })
         .when('/contact', {
             templateUrl: 'public/contact.html',
+            resolve: {
+              logincheck: checkLoggedin
+            }
         })
         .when('/shop',{
             templateUrl: 'public/shop.html',
             resolve: {
                 logincheck: checkLoggedin
             }
+        })
+        .when('/auth/instagram', {
+          controller: function ( $location) {
+            $location.path('/auth/instagram');
+            window.location.reload();
+          }
         })
         .when('/sacral',{
             templateUrl: 'public/components/chakra/Sacral/sacral.html',
@@ -54,14 +62,33 @@ app.config(['$locationProvider', '$routeProvider', function ($locationProvider, 
           redirectTo: '/home'
         });
 }]);
+app.run(function($rootScope, $http, $location) {
+  $rootScope.loggedIn = function () {
+    $http.get('/loggedin').success(function (data) {
+      console.log(data)
+      if (data.lastName) {
+        $rootScope.authenticated = true;
+        $rootScope.current_user = data.email;
+        $rootScope.currentUser = data;
+        $location.path('/');
+      }
+      else {
+        $rootScope.authenticated = false;
+        $rootScope.current_user = '';
+        $rootScope.currentUser = null;
+        $location.path('/');
+      }
+    })
+  };
+  $rootScope.loggedIn();
+});
 
 var checkLoggedin = function ($q, $timeout, $http, $location, $rootScope) {
   var deferred = $q.defer();
 
   $http.get('/loggedin').success(function(user) {
     $rootScope.errorMessage = null;
-console.log(user)
-        if (user !== '0') {
+    if (user !== '0') {
       $rootScope.currentUser = user;
       deferred.resolve();
     } else { //User is not Authenticated
@@ -71,7 +98,8 @@ console.log(user)
     }
   });
   return deferred.promise;
-}
+};
+checkLoggedin;
 
 app.factory('getChakras',['$http', function ($http) {
   return {
@@ -227,8 +255,34 @@ app.controller('ShopCtrlr', function($scope, $timeout, $http, $location){
         });      
 });
 
+app.controller('LogoutCtrlr', function ($scope, $http) {
+  $scope.logout = function () {
+    $http.post('/api/logout')
+      .then(function () {
+        location.reload();
+      });
+
+  }
+});
 
 
+app.controller('LoginCtrlr', function($scope, $http, $location){
+  $scope.login = function () {
+    // console.log($scope.email, $scope.password);
+    var data = {
+      email: $scope.email,
+      password: $scope.password
+    }
+    $http.post('/api/signin', data)
+      .then(function(response){
+        console.log(response);
+        if(response.status === 200)
+          location.reload();
+      },function(error){
+        console.log(error);
+      });
+  }
+});
 
 //var app = angular.module("7moods", ['ngRoute'])
 //
