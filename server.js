@@ -5,6 +5,7 @@ var bodyParser = require("body-parser");
 var db = require('./models');
 var path = require("path");
 var logger = require("morgan");
+var session = require('express-session');
 require("./models/userModel");
 
 
@@ -16,9 +17,9 @@ var port = process.env.PORT || 8000;
 //section 2 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "/")))
+app.use(express.static(path.join(__dirname, "/")));
 app.use(logger("dev"));
-
+app.use(session({ secret: 'anything' }));
 app.use(passport.initialize());
 app.use(passport.session());
 

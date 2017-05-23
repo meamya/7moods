@@ -13,8 +13,8 @@
        
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
 
       
 
@@ -42,10 +42,10 @@
         <div id="navbar" class="collapse navbar-collapse" ng-class="{'in':!navCollapsed}">
     
        <ul class="nav navbar-nav navbar-right">      
-        <li ng-class="navClass('home')"><a href='/'>CHAKRA CARE COLLECTION</a></li>
-        <li ng-class="navClass('about')"><a href='/about'>OUR STORY</a></li>
-        <li ng-class="navClass('shop')"><a href='/shop'>SHOP</a></li>
-        <li ng-class="navClass('contact')"><a href='/contact'>CONTACT</a></li>
+        <li ng-class="navClass('home')"><a href='#/'>CHAKRA CARE COLLECTION</a></li>
+        <li ng-class="navClass('about')"><a href='#/about'>OUR STORY</a></li>
+        <li ng-class="navClass('shop')"><a href='#/shop'>SHOP</a></li>
+        <li ng-class="navClass('contact')"><a href='#/contact'>CONTACT</a></li>
         <form class="navbar-form navbar-left" role="search">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="search by keywords">
@@ -54,16 +54,19 @@
                     </form>
 
         <li class="divider-vertical"></li>
-           <ul ng-show="currentUser" class="nav navbar-nav navbar-right">
+           <ul ng-show="authenticated" class="nav navbar-nav navbar-right">
                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
                <li ng-class="navClass('account')">
                    <a href="#">ACCOUNT</a>
                </li>
 
+               <li ng-controller="LogoutCtrlr" ng-class="navClass('signout')">
+                   <a ng-click="logout()">SIGNOUT</a>
+               </li>
+
            </ul>
-                <ul  ng-show="!currentUser" class="nav navbar-nav navbar-right">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <ul  ng-show="!authenticated" class="nav navbar-nav navbar-right">
                        <li>
                         <p class="navbar-text">Already a member?</p>
                     </li>
@@ -71,23 +74,23 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b><span class="caret"></span></a>
                         <ul id="login-dp" class="dropdown-menu">
                             <li>
-                                <div class="row">
+                                <div class="row" ng-controller="LoginCtrlr">
                                     <div class="col-md-12">
                                         Login via
 
                                             <i class="fa fa-facebook" aria-hidden="true"></i>
 
-                                            <a href="http://localhost:8000/auth/instagram"><i  class="fa fa-instagram"> </i></a>
+                                            <a href="/auth/instagram"><i  class="fa fa-instagram"> </i></a>
                                         </div>
                                         or
-                                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                        <form class="form" role="form" ng-submit="login()" accept-charset="UTF-8" id="login-nav">
                                             <div class="form-group">
                                                 <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                                <input type="email" class="form-control" id="exampleInputEmail2" ng-model="email" placeholder="Email address" required>
                                             </div>
                                             <div class="form-group">
                                                 <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                                <input type="password" class="form-control" id="exampleInputPassword2" ng-model="password" placeholder="Password" required>
                                                 <div class="help-block text-right"><a href="">Forget the password ?</a></div>
                                             </div>
                                             <div class="form-group">
@@ -121,7 +124,7 @@
       </h1>
     <p class="lead">mindfully curated for creative wellness.</p><br>
   
-       <a href="/recommendation" class="btn btn-primary btn-lg">TRY OUR BOX FINDER</a>
+       <a href="#/recommendation" class="btn btn-primary btn-lg">TRY OUR BOX FINDER</a>
       
        </div>
         </div>

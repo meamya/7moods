@@ -50,15 +50,27 @@ module.exports = function(app, passport, filePath, path)
       res.redirect('/');
     });
 
-  // check for loggedin user
-  app.get("/loggedin", function(req, res) {
-    console.log(req.isAuthenticated());
-    res.send(req.isAuthenticated() ? req.user : '0');
-  });
 
 
   app.post('/api/signup', UserController.createUser);
 
+  app.post('/api/signin',passport.authenticate('local-signin', {
+    successRedirect : '/shop', // redirect to the secure profile section
+    failureRedirect : '/login', // redirect back to the signup page if there is an error
+    failureFlash : true // allow flash messages
+  }));
+
+  // check for loggedin user
+  app.get("/loggedin", function(req, res) {
+    console.log(req.session);
+    res.send(req.isAuthenticated() ? req.user : '0');
+  });
+
+  // handle logout
+  app.post("/api/logout", function(req, res) {
+    req.logOut();
+    res.send(200);
+  })
 
   var file = (path.join(filePath + '/public/components/chakra.json'));
 
