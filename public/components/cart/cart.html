@@ -7,6 +7,7 @@
             <div ng-repeat="item in cart">
                 <div class="col-xs-4">
                     <div class="thumbnail">
+                        <span style="float: right;"><a ng-click="removeCartItem(item._id)" role="button"><i class="fa fa-times fa-3" aria-hidden="true"></i></a></span>
                         <h3 align="center">{{item.product_type}}</h3>
                         <img ng-src="{{item.image_url}}" alt="...">
                         <div class="caption" align="center"><h4>

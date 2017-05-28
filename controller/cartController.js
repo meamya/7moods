@@ -45,8 +45,25 @@ var CartController = {
       }
     });
   },
-  removeCart: function (req, res) {
-    
+  removeCartItem: function (req, res) {
+    var email = req.session.passport.user.email;
+    db.User.findOne({email: email}, function (err, user) {
+      if (user) {
+        var newCartItems = user.cart.filter(function (item) {
+          return req.params.cartId != item._id;
+        });
+        user.cart = newCartItems;
+        console.log(newCartItems.length);
+        user.save(function (err) {
+          if (err) return err;
+          res.status(201).send({
+            message: "Item removed from Cart",
+            success: true,
+            cart: user.cart.length
+          });
+        })
+      }
+    });
   }
 };
 module.exports = CartController;

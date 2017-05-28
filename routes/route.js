@@ -71,6 +71,8 @@ module.exports = function(app, passport, filePath, path)
 
   app.get('/api/cart', CartController.getCart);
 
+  app.delete('/api/cartItem/:cartId', CartController.removeCartItem);
+
   // handle logout
   app.post("/api/logout", function(req, res) {
     req.logOut();

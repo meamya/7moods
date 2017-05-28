@@ -294,11 +294,14 @@ app.controller('CartCtrlr', function ($rootScope, $scope, $timeout, $http) {
   $http.get('/api/cart').then(function (response) {
     console.log(response.data.cart);
     $scope.cart = response.data.cart;
-    $scope.apply(function () {
-      $rootScope.currentUser = response.data.cart
-    }, 2000);
-
   });
+
+  $scope.removeCartItem = function (itemId) {
+    $http.delete('/api/cartItem/' + itemId).then(function (response) {
+      console.log(response);
+
+    });
+  }
 });
 
 app.controller('LogoutCtrlr', function ($scope, $http) {
