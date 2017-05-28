@@ -3,6 +3,7 @@ var db = require('../models');
 var CartController = {
   addToCart: function(req, res){
     console.log(req.body);
+    var email = req.session.passport.user.email;
     var cartObject = req.body;
     var Cart = {
       description: cartObject.description,
@@ -12,13 +13,14 @@ var CartController = {
       selectedPackage: cartObject.selectedPackage
     };
     db.User
-      .findOne({email: cartObject.email}, function (err, user) {
+      .findOne({email: email}, function (err, user) {
         if(user) {
           user.cart.push(Cart);
           user.save(function (err) {
             res.status(201).send({
               message: "Item added to Cart",
-              success: true
+              success: true,
+              cart: user.cart.length
             });
             if (err) return err;
           });
@@ -42,6 +44,9 @@ var CartController = {
         }
       }
     });
+  },
+  removeCart: function (req, res) {
+    
   }
 };
 module.exports = CartController;

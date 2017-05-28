@@ -55,7 +55,7 @@
 
         <li class="divider-vertical"></li>
            <ul ng-show="authenticated" class="nav navbar-nav navbar-right">
-              <a href="#/cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i><sup id="itemCount">1</sup></a>
+              <a href="#/cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i><sup id="itemCount">{{currentUser.cart.length}}</sup></a>
 
                <li ng-class="navClass('account')">
                    <a href="#">ACCOUNT</a>

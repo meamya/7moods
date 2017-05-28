@@ -288,12 +288,16 @@ app.controller('ShopCtrlr', function($scope, $timeout, $http, $location){
     };
 
 });
-app.controller('CartCtrlr', function ($scope, $timeout, $http) {
+app.controller('CartCtrlr', function ($rootScope, $scope, $timeout, $http) {
   $scope.cart = {
   };
   $http.get('/api/cart').then(function (response) {
     console.log(response.data.cart);
     $scope.cart = response.data.cart;
+    $scope.apply(function () {
+      $rootScope.currentUser = response.data.cart
+    }, 2000);
+
   });
 });
 
