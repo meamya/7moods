@@ -28,6 +28,9 @@ app.config(['$routeProvider', function ($routeProvider) {
         .when('/partner', {
             templateUrl: 'public/partner.html',
         })
+        .when('/cart', {
+            templateUrl: 'public/components/cart/cart.html'
+        })
         .when('/contact', {
             templateUrl: 'public/contact.html',
             resolve: {
@@ -36,9 +39,9 @@ app.config(['$routeProvider', function ($routeProvider) {
         })
         .when('/shop',{
             templateUrl: 'public/shop.html',
-            resolve: {
-                logincheck: checkLoggedin
-            }
+            // resolve: {
+            //     logincheck: checkLoggedin
+            // }
         })
         .when('/auth/instagram', {
           controller: function ( $location) {
@@ -66,6 +69,7 @@ app.run(function($rootScope, $http, $location) {
   $rootScope.loggedIn = function () {
     $http.get('/loggedin').success(function (data) {
       console.log(data)
+      localStorage.setItem('user', data.email);
       if (data.lastName) {
         $rootScope.authenticated = true;
         $rootScope.current_user = data.email;
@@ -228,7 +232,14 @@ app.filter('startFrom',function() {
 });
 
 app.controller('SignUpCtrlr', function($scope, $http, $location) {
+
     $scope.signup = function() {
+      if($scope.password !== $scope.confirm_password){
+        $scope.error = "Password does not match";
+        return;
+      }
+      $scope.message = "";
+      $scope.error = "";
         var data = {
             firstname: $scope.firstName,
             lastname: $scope.lastName,
@@ -239,26 +250,58 @@ app.controller('SignUpCtrlr', function($scope, $http, $location) {
         };
          $http.post('/api/signup', data)
          .then(function(response){
-             console.log(response);
+             if(response.status == 409){
+               $scope.message = response.data.message
+             }
              if(response.data.success){
-                 $location.path("/signin")
+
+               $http.post('/api/signin', {email: data.email, password: data.password})
+                 .then(function (response) {
+                   if (response.status == 201){
+                     location.path('#/home');
+                   }
+                 })
              }
          },function(error){
              console.log(error);
          });
-               }
+    }
 });
+
 app.controller('ShopCtrlr', function($scope, $timeout, $http, $location){
-   // $scope.boxes = [];
-    $http.get("/api/shop").then(function(response) {
-            $scope.boxes = response.data;
-        });      
+  $scope.selPackage;
+
+  $http.get("/api/shop").then(function(response) {
+    $scope.boxes = response.data;
+  });
+    $scope.check= function (box, selected) {
+      console.log(selected);
+      var user = localStorage.getItem('user');
+      console.log(user);
+      box.selectedPackage = selected;
+      box.email = user;
+      console.log(box);
+
+      $http.post('/api/cart', box).then(function (response) {
+        console.log(response);
+      });
+    };
+
+});
+app.controller('CartCtrlr', function ($scope, $timeout, $http) {
+  $scope.cart = {
+  };
+  $http.get('/api/cart').then(function (response) {
+    console.log(response.data.cart);
+    $scope.cart = response.data.cart;
+  });
 });
 
 app.controller('LogoutCtrlr', function ($scope, $http) {
   $scope.logout = function () {
     $http.post('/api/logout')
       .then(function () {
+        localStorage.removeItem('user');
         location.reload();
       });
 
@@ -283,18 +326,3 @@ app.controller('LoginCtrlr', function($scope, $http, $location){
       });
   }
 });
-
-//var app = angular.module("7moods", ['ngRoute'])
-//
-//               
-//.config(function($routeProvider) {
-//  $routeProvider
-//  
-//  .when("/", {
-//			templateUrl: "components/root/root.html",
-//			controller: "rootCtlr",
-//		})
-//  .otherwise({
-//    redirectTo: "templates/home.html"
-//  });
-//});

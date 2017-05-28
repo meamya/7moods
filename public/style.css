@@ -547,5 +547,12 @@ footer p {
 
 }
 
-
+#itemCount{
+    top: -1.5em;
+    right: 30px;
+    color: white;
+    border-radius: 50%;
+    background-color: red;
+    width: 20px;
+}
 

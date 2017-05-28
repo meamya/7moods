@@ -13,8 +13,8 @@
        
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.1/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.1/angular-route.js"></script>
 
       
 
@@ -55,7 +55,7 @@
 
         <li class="divider-vertical"></li>
            <ul ng-show="authenticated" class="nav navbar-nav navbar-right">
-               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              <a href="#/cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i><sup id="itemCount">1</sup></a>
 
                <li ng-class="navClass('account')">
                    <a href="#">ACCOUNT</a>
@@ -104,7 +104,7 @@
                                         </form>
                                     </div>
                                     <div class="bottom text-center">
-                                        New here ? <a href="/signup"><b>sign up</b></a>
+                                        New here ? <a href="#/signup"><b>sign up</b></a>
                                 </div>
                             </li>
                         </ul>

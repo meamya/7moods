@@ -1,0 +1,25 @@
+<div class="container" ng-controller="CartCtrlr">
+    <div class="row">
+        <br>
+        <a href="/">Back to affirmation cards</a>
+        <div class="col-4">
+            <h2 align="center">CART</h2>
+            <div ng-repeat="item in cart">
+                <div class="col-xs-4">
+                    <div class="thumbnail">
+                        <h3 align="center">{{item.product_type}}</h3>
+                        <img ng-src="{{item.image_url}}" alt="...">
+                        <div class="caption" align="center"><h4>
+                            {{item.description}}</h4>
+                            <br>
+                            <br>
+                        <p>{{item.price}}</p>
+                            <p>{{item.selectedPackage}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

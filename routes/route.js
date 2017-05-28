@@ -1,6 +1,7 @@
 var db= require('../models/');
 var fs = require('fs');
 var UserController = require('../controller/userController');
+var CartController = require('../controller/cartController');
 
 module.exports = function(app, passport, filePath, path)
 {
@@ -57,7 +58,6 @@ module.exports = function(app, passport, filePath, path)
   app.post('/api/signin',passport.authenticate('local-signin', {
     successRedirect : '/shop', // redirect to the secure profile section
     failureRedirect : '/login', // redirect back to the signup page if there is an error
-    failureFlash : true // allow flash messages
   }));
 
   // check for loggedin user
@@ -65,6 +65,11 @@ module.exports = function(app, passport, filePath, path)
     console.log(req.session);
     res.send(req.isAuthenticated() ? req.user : '0');
   });
+
+  // handle cart
+  app.post('/api/cart', CartController.addToCart);
+
+  app.get('/api/cart', CartController.getCart);
 
   // handle logout
   app.post("/api/logout", function(req, res) {
