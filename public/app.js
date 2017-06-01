@@ -285,6 +285,7 @@ app.controller('ShopCtrlr', function($scope, $timeout, $http, $location){
       $http.post('/api/cart', box).then(function (response) {
         console.log(response);
       });
+      return;
     };
 
 });
@@ -300,16 +301,14 @@ app.controller('CartCtrlr', function ($rootScope, $location, $scope, $timeout, $
   $scope.removeCartItem = function (itemId) {
     $http.delete('/api/cartItem/' + itemId).then(function (response) {
       console.log(response);
+      $scope.cart = response.data.cart;
 
     });
   };
 
   $scope.emptyCart = function() {
     $http.delete('/api/cart').then(function (response) {
-      // location.reload();
-      // location.path('/#/cart');
       $scope.cart = {};
-      // $scope.$apply();
       console.log(response)
     });
   }
@@ -327,9 +326,8 @@ app.controller('LogoutCtrlr', function ($scope, $http) {
 });
 
 
-app.controller('LoginCtrlr', function($scope, $http, $location){
+app.controller('LoginCtrlr', function($scope, $http){
   $scope.login = function () {
-    // console.log($scope.email, $scope.password);
     var data = {
       email: $scope.email,
       password: $scope.password
