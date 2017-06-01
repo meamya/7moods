@@ -20,12 +20,12 @@
                                 <span ng-show="{{box.options}}">
                         <p align="left">Select</p>
                         <div class="form-group">
-                            <select class="form-control"  id="exampleSelect1">
+                            <select class="form-control"  id="exampleSelect1" ng-model="selPackage">
                                 <option value="{{package}}" ng-repeat="package in box.packages">{{package}}</option>
                             </select>
                              </div>
                              </span>
-                                <a href="/signup" class="btn btn-block" role="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Pre-Order {{box.price}}</a>
+                                <a class="btn btn-block" ng-click="check(box, selPackage)" role="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Pre-Order {{box.price}}</a>
                             </div>
                         </div>
                     </div>

@@ -1,12 +1,7 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
+var CartSchema = require('./cartModel');
 // var ObjectId = Schema.Types.ObjectId;
-
-
-var cartSchema = new Schema({
-    
-    
-});
 
 
 var userSchema = new Schema({
@@ -37,6 +32,9 @@ var userSchema = new Schema({
     },
     facebook_id: {
         type: Number
+    },
+    cart: {
+      type: [CartSchema]
     }
-})
+});
 module.exports = mongoose.model("User", userSchema);

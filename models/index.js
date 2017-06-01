@@ -9,3 +9,4 @@ mongoose.connect(config.database, function (err) {
 });
 
 module.exports.User = require('./userModel');
+module.exports.Cart = require('./cartModel');
