@@ -45,6 +45,21 @@ var CartController = {
       }
     });
   },
+  emptyCart: function(req, res) {
+    var email = req.session.passport.user.email;
+    db.User.findOne({email: email}, function (err, user) {
+      if (user) {
+        user.cart = [];
+        user.save(function (err) {
+          if (err) return err;
+          res.status(200).send({
+            message: "Cart has been emptied successfully",
+            success: true
+          });
+        });
+      }
+      });
+  },
   removeCartItem: function (req, res) {
     var email = req.session.passport.user.email;
     db.User.findOne({email: email}, function (err, user) {

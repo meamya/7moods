@@ -288,9 +288,10 @@ app.controller('ShopCtrlr', function($scope, $timeout, $http, $location){
     };
 
 });
-app.controller('CartCtrlr', function ($rootScope, $scope, $timeout, $http) {
+app.controller('CartCtrlr', function ($rootScope, $location, $scope, $timeout, $http) {
   $scope.cart = {
   };
+
   $http.get('/api/cart').then(function (response) {
     console.log(response.data.cart);
     $scope.cart = response.data.cart;
@@ -300,6 +301,16 @@ app.controller('CartCtrlr', function ($rootScope, $scope, $timeout, $http) {
     $http.delete('/api/cartItem/' + itemId).then(function (response) {
       console.log(response);
 
+    });
+  };
+
+  $scope.emptyCart = function() {
+    $http.delete('/api/cart').then(function (response) {
+      // location.reload();
+      // location.path('/#/cart');
+      $scope.cart = {};
+      // $scope.$apply();
+      console.log(response)
     });
   }
 });
