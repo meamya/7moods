@@ -74,7 +74,7 @@ var CartController = {
           res.status(201).send({
             message: "Item removed from Cart",
             success: true,
-            cart: user.cart.length
+            cart: user.cart
           });
         })
       }
